@@ -29,13 +29,12 @@ export function useApplicationData() {
   }
     , [])
 
-  function newDays(days, interview) {
-    const currentDay = days.find(singleDay => singleDay.name === state.day)
-    //check if the appointment in question has interview === null
-    interview ?
+  function updateSpots(days, interview) {
+    const recentDay = days.find(day => day.name === state.day)
 
-      currentDay.spots -= 1 :
-      currentDay.spots += 1;
+    interview ?
+      recentDay.spots -= 1 :
+      recentDay.spots += 1;
     return days
   }
 
@@ -50,15 +49,14 @@ export function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     }
-
-    const newDaysState = newDays([...state.days], interview);
+    const updatedSpotsStatus = state.appointments[id].interview ? [...state.days] : updateSpots([...state.days], interview);
 
     return axios.
       put(`/api/appointments/${id}`, { interview })
       .then(() => setState({
         ...state,
         appointments,
-        newDaysState
+        updatedSpotsStatus
       })
       )
   }
@@ -74,14 +72,14 @@ export function useApplicationData() {
       [id]: appointment
     }
 
-    const newDaysState = newDays([...state.days], interview);
+    const updatedSpotsStatus = updateSpots([...state.days], interview);
 
     return axios.
       delete(`/api/appointments/${id}`, { interview })
       .then(() => setState({
         ...state,
         appointments,
-        newDaysState
+        updatedSpotsStatus
       })
       )
   }

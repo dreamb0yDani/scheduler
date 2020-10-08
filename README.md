@@ -1,12 +1,13 @@
 # Interview Scheduler
 
+
 ## Final Product
 
-!["Create view"]()
+!["Create view"](https://github.com/dreamb0yDani/scheduler/blob/master/docs/create%20view.png?raw=true)
 
-!["Delete view"]()
+!["Delete view"](https://github.com/dreamb0yDani/scheduler/blob/master/docs/Delete%20view.png?raw=true)
 
-!["Main view"]()
+!["Main view"](https://github.com/dreamb0yDani/scheduler/blob/master/docs/main%20view.png?raw=true)
 
 ## Dependencies
 
