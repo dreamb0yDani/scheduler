@@ -1,6 +1,6 @@
 export function getAppointmentsForDay(state, day) {
 
-  if (state.days.length === 0 || !state.days.some(e => day === e.name)) {
+  if (!state.days.length || !state.days.find(e => day === e.name)) {
     return []
   }
 
@@ -11,7 +11,6 @@ export function getAppointmentsForDay(state, day) {
 export function getInterview(state, interview) {
 
   if (!interview) return null;
-
   const newObj = { ...interview, interviewer: state.interviewers[interview.interviewer] }
 
   return newObj
@@ -19,7 +18,7 @@ export function getInterview(state, interview) {
 
 export function getInterviewersForDay(state, day) {
 
-  if (state.days.length === 0 || !state.days.some(e => day === e.name)) {
+  if (!state.days.length || !state.days.find(e => day === e.name)) {
     return []
   }
 
