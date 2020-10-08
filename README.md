@@ -1,4 +1,7 @@
 # Interview Scheduler
+This project inroduced to the widely famous React framework with new and challenging yet fun activities. It was learning experience unlike before. 
+
+The project is about scheduling the interview appointments. It offers updated status on the available slots along with the list of available interviewers. The applicant is able to edit the existintg interview or even delete, if needed be. 
 
 
 ## Final Product
