@@ -9,7 +9,6 @@ export function useApplicationData() {
     days: [],
     appointments: {},
     interviewers: {},
-    spots: 5
   });
 
   useEffect(() => {
@@ -59,6 +58,7 @@ export function useApplicationData() {
         updatedSpotsStatus
       })
       )
+      .catch(err => err.status(500).json({}))
   }
 
   function cancelInterview(id, interview) {
