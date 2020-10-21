@@ -42,9 +42,10 @@ export default function Appointment(props) {
   }
 
 
-  function cancel() {
+  function cancel(interview) {
     transition(DELETING)
-    const interview = null
+    interview = null
+
     props.cancelInterview(props.id, interview)
       .then(() => transition(EMPTY))
       .catch(error => transition(ERROR_DELETE, true))
